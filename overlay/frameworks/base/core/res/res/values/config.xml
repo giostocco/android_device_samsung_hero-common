@@ -297,5 +297,5 @@
     </integer-array>
 
     <!-- Boolean indicating if current platform supports BLE peripheral mode -->
-    <bool name="config_bluetooth_le_peripheral_mode_supported">
+    <bool name="config_bluetooth_le_peripheral_mode_supported">true</bool>
 </resources>
