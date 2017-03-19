@@ -190,17 +190,12 @@
 
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
+        <item>1</item>
         <item>4</item>
-        <item>9</item>
-        <item>13</item>
-        <item>50</item>
-        <item>100</item>
-        <item>200</item>
-        <item>400</item>
-        <item>1000</item>
-        <item>2000</item>
-        <item>3000</item>
-        <item>5000</item>
+        <item>45</item>
+        <item>1025</item>
+        <item>1480</item>
+        <item>2940</item>
         <item>10000</item>
         <item>20000</item>
     </integer-array>
@@ -210,29 +205,32 @@
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>1</item>    <!-- 0-4 -->
-        <item>10</item>   <!-- 4-9 -->
-        <item>25</item>   <!-- 9-13 -->
-        <item>41</item>   <!-- 13-50 -->
-        <item>52</item>   <!-- 50-100 -->
-        <item>62</item>   <!-- 100-200 -->
-        <item>69</item>   <!-- 200-400 -->
-        <item>78</item>   <!-- 400-1000 -->
-        <item>88</item>   <!-- 1000-2000 -->
-        <item>114</item>  <!-- 2000-3000 -->
-        <item>138</item>  <!-- 3000-5000 -->
-        <item>178</item>  <!-- 5000-10000 -->
-        <item>222</item>  <!-- 10000-20000 -->
-        <item>255</item>  <!-- 30000+ -->
+        <item>3</item>
+        <item>7</item>
+        <item>11</item>
+        <item>26</item>
+        <item>60</item>
+        <item>108</item>
+        <item>175</item>
+        <item>225</item>
+        <item>255</item>
     </integer-array>
+
+    <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
+         for debouncing the light sensor.  Different constants are used to debounce the light sensor
+         when adapting to brighter or darker environments.  This parameter controls how quickly
+         brightness changes occur in response to an observed change in light level that exceeds the
+         hysteresis threshold. -->
+    <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
+    <integer name="config_autoBrightnessDarkeningLightDebounce">4000</integer>
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
-    <integer name="config_screenBrightnessSettingMinimum">10</integer>
+    <integer name="config_screenBrightnessSettingMinimum">6</integer>
 
     <!-- Default screen brightness setting.
          Must be in the range specified by minimum and maximum. -->
-    <integer name="config_screenBrightnessSettingDefault">134</integer>
+    <integer name="config_screenBrightnessSettingDefault">60</integer>
 
     <!-- Screen brightness used to dim the screen when the user activity
          timeout expires.  May be less than the minimum allowed brightness setting
