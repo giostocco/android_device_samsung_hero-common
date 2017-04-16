@@ -27,9 +27,6 @@ TARGET_BOOTLOADER_BOARD_NAME := universal8890
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
-# Audio HAL variant
-TARGET_AUDIOHAL_VARIANT := samsung
-
 # CameraWrapper
 TARGET_PROVIDES_CAMERA_HAL := true
 
@@ -47,9 +44,6 @@ BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
-
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-gnu-6.3/bin
-KERNEL_TOOLCHAIN_PREFIX := aarch64-cortex_a53-linux-gnueabi-
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_sec
