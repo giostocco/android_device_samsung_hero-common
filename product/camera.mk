@@ -12,4 +12,4 @@ PRODUCT_COPY_FILES += \
 
 # build.prop
 PRODUCT_PROPERTY_OVERRIDES += \
-	camera.hal1.packagelist=com.whatsapp
+	camera.hal1.packagelist=com.whatsapp,com.cyworld.camera
